@@ -1,46 +1,31 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Burasutのホームページ</title>
-  
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  
-  <!-- 自分のCSSファイル -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> <!-- 共通のスタイルシート -->
 </head>
 <body>
   <header>
-    <h1 class="fade-in">Burasutのホームページへようこそ！</h1>
-    <p>あなたのサイトの紹介文がここに入ります。</p>
+    <h1 class="fade-in">Burasutのホームページ</h1>
+    <nav>
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="blog/index.html">ブログ</a></li> <!-- ブログリンク -->
+      </ul>
+    </nav>
   </header>
 
-  <section class="cards">
-    <div class="card fade-in">
-      <img src="https://via.placeholder.com/300x200" alt="Card image">
-      <div class="card-body">
-        <h5 class="card-title">カードタイトル</h5>
-        <p class="card-text">カードの説明文がここに入ります。</p>
-        <a href="#" class="btn">詳細を見る</a>
-      </div>
-    </div>
-    <div class="card fade-in">
-      <img src="https://via.placeholder.com/300x200" alt="Card image">
-      <div class="card-body">
-        <h5 class="card-title">カードタイトル</h5>
-        <p class="card-text">別のカードの内容がここに入ります。</p>
-        <a href="#" class="btn">詳細を見る</a>
-      </div>
-    </div>
+  <section class="content">
+    <h2>ようこそ！</h2>
+    <p>このサイトではBurasutの最新情報をお届けします。</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Burasutのホームページ</p>
   </footer>
-  
-  <!-- 自分のJavaScriptファイル -->
-  <script src="script.js"></script>
 </body>
 </html>
