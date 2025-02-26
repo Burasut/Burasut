@@ -1,0 +1,146 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('image/wood.jpg') no-repeat center center fixed; /* 木目の背景 */
+  background-size: cover; /* 背景画像を画面全体にフィットさせる */
+  color: #333; /* 文字色 */
+}
+
+header {
+  background: linear-gradient(135deg, #FFA500, #FF6347); /* オレンジのグラデーション */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.blog-article {
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* 白背景 */
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 80px; /* 下部に余白を追加 */
+}
+
+footer {
+  background-color: #4CAF50; /* ヘッダーと同じ色 */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative; /* フッターの位置を調整 */
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px; /* フッターと記事の間に余白を追加 */
+}
+
+.article-content {
+  margin-bottom: 40px;
+}
+
+.article-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.article-content h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.related-posts {
+  margin-top: 40px;
+}
+
+.related-posts h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.related-posts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.related-posts ul li {
+  margin-bottom: 10px;
+}
+
+.related-posts ul li a {
+  color: #3498db;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.related-posts ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.social-icons a {
+  color: #ff0000; /* YouTubeの赤色 */
+  font-size: 30px; /* アイコンのサイズ */
+  text-decoration: none;
+  margin: 10px;
+}
+
+.social-icons a:hover {
+  color: #c4302b; /* ホバー時の色 */
+}
+
+.social-icons a.twitter {
+  color: #1DA1F2; /* Twitter(X)の青色 */
+}
+
+.social-icons a.twitter:hover {
+  color: #0d95e8; /* ホバー時の色 */
+}
+
+@media (max-width: 768px) {
+  .blog-article {
+    padding: 20px;
+  }
+  
+  .article-content h2, .article-content h3 {
+    font-size: 22px;
+  }
+
+  .social-icons a {
+    font-size: 24px;
+  }
+}

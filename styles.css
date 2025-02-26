@@ -1,14 +1,14 @@
-/* styles.css */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8; /* 明るい背景 */
+  background: url('image/wood.jpg') no-repeat center center fixed; /* 木目の背景 */
+  background-size: cover; /* 背景画像を画面全体にフィットさせる */
   color: #333; /* 文字色 */
 }
 
 header {
-  background-color: #4CAF50; /* 明るいグリーン */
+  background: linear-gradient(135deg, #FFA500, #FF6347); /* オレンジのグラデーション */
   color: white;
   padding: 20px;
   text-align: center;
@@ -44,6 +44,10 @@ nav ul li a:hover {
 .content {
   padding: 40px 20px;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8); /* 白い背景に少し透過を加える */
+  border-radius: 10px;
 }
 
 footer {
@@ -69,14 +73,35 @@ footer {
   }
 }
 
+/* ソーシャルアイコンのデザイン */
+.social-icons a {
+  color: #ff0000; /* YouTubeの赤色 */
+  font-size: 30px; /* アイコンのサイズ */
+  text-decoration: none;
+  margin: 10px;
+}
+
+.social-icons a:hover {
+  color: #c4302b; /* ホバー時の色 */
+}
+
+.social-icons a.twitter {
+  color: #1DA1F2; /* Twitter(X)の青色 */
+}
+
+.social-icons a.twitter:hover {
+  color: #0d95e8; /* ホバー時の色 */
+}
+
 .card {
   background-color: white;
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 影を少し強調 */
   transition: transform 0.3s ease-in-out;
 }
+
 
 .card:hover {
   transform: translateY(-5px); /* ホバー時に浮き上がる */
@@ -114,4 +139,10 @@ footer {
   .blog-posts {
     grid-template-columns: 1fr;
   }
+}
+
+button:hover {
+  background-color: #3498db; /* ホバー時に色を変える */
+  transform: scale(1.1); /* 少し大きくなる */
+  transition: all 0.3s ease;
 }

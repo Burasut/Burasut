@@ -6,20 +6,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ブログ記事1 | Burasutのブログ</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css"> <!-- 共通のスタイルシート -->
+  <link rel="stylesheet" href="../blogstyles.css"> <!-- 共通のスタイルシート -->
 </head>
 <body>
   <header>
-    <h1 class="fade-in">ブログ記事1</h1>
+    <h1 class="fade-in">Burasutのブログ</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="index.html">ブログ</a></li>
+      </ul>
+    </nav>
   </header>
 
   <article class="blog-article">
-    <p>ここにブログ記事1の内容が入ります。記事の詳細な内容を記述できます。</p>
-    <p>さらに段落を追加して、記事を充実させることができます。</p>
+    <section class="article-content">
+      <h2>サイコパスMBTI診断（嘘）</h2>
+      <p>それなりにまじめに作った嘘のMBTI診断です。</p>
+      <p>あなたの性格を分析してなりえそうな犯罪者とかを予想します。</p>
+
+    </section>
+
+<body>
+    <h1>犯罪者MBTI診断</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. あなたが犯罪を犯すなら、その動機は？</p>
+            <input type="radio" name="q1" value="G"> 快楽や欲望のため<br>
+            <input type="radio" name="q1" value="S"> 目的を達成するため
+        </div>
+        
+        <div class="question">
+            <p>2. どの手口を好む？</p>
+    <input type="radio" name="q2" value="C"> 狡猾な罠や詐欺<br>
+    <input type="radio" name="q2" value="V"> 直接的な暴力
+        </div>
+        
+        <div class="question">
+            <p>3. 犯罪を計画するときの行動スタイルは？</p>
+            <input type="radio" name="q3" value="I"> 一人で秘密裏に行う<br>
+            <input type="radio" name="q3" value="E"> 共犯者や部下と組織的に動く
+        </div>
+        
+        <div class="question">
+            <p>4. 衝動的に行動する？</p>
+            <input type="radio" name="q4" value="P"> その場の勢いでやる<br>
+            <input type="radio" name="q4" value="J"> 計画的に慎重にやる
+        </div>
+        
+        <button type="button" onclick="calculateResult()">診断する</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+    <button id="shareButton" class="share-btn" style="display:none;" onclick="shareOnTwitter()">結果をTwitterでシェア</button>
+
+    <script>
+    let resultText = ""; // 診断結果のテキストを保存する変数
+    
+function shareOnTwitter() {
+    let tweetText = resultText;  // 結果のテキストを取得
+    let tweetURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
+    window.open(tweetURL, '_blank');  // 新しいタブでTwitterを開く
+}
+
+
+function calculateResult() {
+    let answers = {
+        q1: document.querySelector('input[name="q1"]:checked'),
+        q2: document.querySelector('input[name="q2"]:checked'),
+        q3: document.querySelector('input[name="q3"]:checked'),
+        q4: document.querySelector('input[name="q4"]:checked')
+    };
+
+    if (!answers.q1 || !answers.q2 || !answers.q3 || !answers.q4) {
+        document.getElementById("result").innerText = "すべての質問に答えてください！";
+        document.getElementById("shareButton").style.display = "none"; // シェアボタン非表示
+        return;
+    }
+
+    let type = answers.q1.value + answers.q2.value + answers.q3.value + answers.q4.value;
+
+    // typeを確認
+    console.log(type);  // typeをコンソールに表示
+
+    let results = {
+        "GCIP": "冷酷な策略家（詐欺や洗脳でターゲットを操る）【INTJ】",
+        "GIIV": "狡猾な殺人鬼（完全犯罪を目指す暗殺者）【INTP】",
+        "GCEP": "カリスマ詐欺師（人を魅了し、大規模な詐欺を働く）【ENFJ】",
+        "GCEJ": "残忍な洗脳者（暴力と洗脳で支配する）【ENTJ】",
+        "GVIP": "衝動的な殺人鬼（突発的な怒りで犯行に及ぶ）【ESTP】",
+        "GVIV": "暴虐な快楽殺人鬼（殺人に快楽を感じる）【ESFP】",
+        "GVEP": "衝動的な暴君（力で人を支配しようとする）【ENTP】",
+        "GVEJ": "血に飢えた支配者（暴力で世界を征服しようとする）【ESTJ】",
+        "SCIP": "計画的な強盗犯（慎重にターゲットを狙う）【ISTP】",
+        "SCIV": "完璧主義の暗殺者（プロフェッショナルな殺し屋）【ISFP】",
+        "SCEP": "知的犯罪者（詐欺やハッキングを駆使する）【INTP】",
+        "SCEJ": "戦略的な悪の指導者（組織を動かすマフィアのボス）【ENTJ】",
+        "SVIP": "冷酷な軍人犯罪者（軍隊や戦争で犯罪を行う）【ISTJ】",
+        "SVIV": "虐殺を楽しむ支配者（恐怖で勢力を拡大する）【ESTJ】",
+        "SVEP": "暴力的なギャングリーダー（暴力で支配する）【ESFJ】",
+        "SVEJ": "世界を征服する暴君（圧倒的な支配力を持つ）【ENTJ】",
+        "GCIJ": "孤高の策士（冷酷な知能犯、完全犯罪を目指す）【INTJ】",
+        "GVIJ": "孤独な暗殺者（ターゲットを狙い、無駄なく消す）【ISTP】",
+        "SCIJ": "完璧な犯罪者（誰にも気づかれず犯罪を遂行する）【ISFP】",
+        "SVIJ": "冷徹な暗殺者（ターゲットを静かに排除する）【ISTJ】",
+        "GIIP": "サイコパス（感情を持たず、計画的に冷徹に犯罪を行う）【INTP】",
+        "GIIE": "冷徹なサイコパス（無感情で冷酷に犯罪を重ねる）【INTJ】",
+        "SIIP": "残虐な誘拐犯（目的のために無差別に人を誘拐する）【ESTP】",
+        "SIIE": "人質を取る支配者（他人を恐怖で支配するため誘拐する）【ENFJ】",
+        "GIIJ": "完全無欠のサイコパス（犯罪を計画的に行い、自己の欲望のために他人を操る）【ENTP】",
+        "GVEJ": "無慈悲な支配者（暴力で世界を支配し、感情のない強さで支配する）【ENTJ】",
+        "GCIV": "冷徹な極悪犯（完全犯罪を目指す冷酷な人物）【INTP】",
+        "GVEP": "残虐な破壊者（暴力で力を得ようとする支配者）【ESTJ】",
+        "SVEP": "冷徹な支配者（強力な暴力で支配を強化する）【ESFJ】",
+        "SCIV": "影で支配する犯罪者（クールで計算高い暗殺者）【ISFP】"
+    };
+
+    resultText = results[type] ? "あなたの犯罪者MBTI: " + results[type] : "診断エラー: 結果が見つかりません。";
+    document.getElementById("result").innerText = resultText;
+
+    if (results[type]) {
+        document.getElementById("shareButton").style.display = "inline"; // シェアボタン表示
+    } else {
+        document.getElementById("shareButton").style.display = "none"; // シェアボタン非表示
+    }
+}
+
+    </script>
+
+</body>
   </article>
 
-  <footer>
-    <p>&copy; 2025 Burasutのホームページ</p>
-  </footer>
+
+
+
+	<footer>
+	  <p>&copy; 2025 Burasutのホームページ</p>
+	  <!-- ソーシャルアイコンリンク -->
+	  <div class="social-icons">
+	    <!-- YouTube アイコンリンク -->
+	    <a href="https://www.youtube.com/@Burasut" target="_blank">
+	      <i class="fab fa-youtube"></i> <!-- YouTubeアイコン -->
+	    </a>
+	    <!-- Twitter (X) アイコンリンク -->
+	    <a href="https://twitter.com/BurasutFrase" target="_blank">
+	      <img src="../image/guku.png" alt="Twitter" style="width: 40px; height: 40px; border-radius: 50%;"> <!-- Twitterアイコン -->
+	    </a>
+	  </div>
+	</footer>
 </body>
 </html>

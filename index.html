@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Burasutのホームページ</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="styles.css"> <!-- 共通のスタイルシート -->
 </head>
 <body>
@@ -13,8 +13,8 @@
     <h1 class="fade-in">Burasutのホームページ</h1>
     <nav>
       <ul>
-        <li><a href="#">ホーム</a></li>
-        <li><a href="blog/index.html">ブログ</a></li> <!-- ブログリンク -->
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog/index.html">ブログ</a></li>
       </ul>
     </nav>
   </header>
@@ -24,8 +24,20 @@
     <p>このサイトではBurasutの最新情報をお届けします。</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Burasutのホームページ</p>
-  </footer>
+	<footer>
+	  <p>&copy; 2025 Burasutのホームページ</p>
+	  <!-- ソーシャルアイコンリンク -->
+	  <div class="social-icons">
+	    <!-- YouTube アイコンリンク -->
+	    <a href="https://www.youtube.com/@Burasut" target="_blank">
+	      <i class="fab fa-youtube"></i> <!-- YouTubeアイコン -->
+	    </a>
+	    <!-- Twitter (X) アイコンリンク -->
+	    <a href="https://twitter.com/BurasutFrase" target="_blank">
+	      <img src="image/guku.png" alt="Twitter" style="width: 40px; height: 40px; border-radius: 50%;"> <!-- Twitterアイコン -->
+	    </a>
+	  </div>
+	</footer>
+
 </body>
 </html>
