@@ -11,20 +11,55 @@
 <body>
   <header>
     <h1 class="fade-in">Burasutのホームページ</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="blog/index.html">ブログ</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section class="content">
-    <h2>ようこそ！</h2>
-    <p>このサイトではBurasutの最新情報をお届けします。</p>
-  </section>
+  <div class="container">
+    <!-- メニュー用のブロック -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="blog/index.html">ブログ</a></li>
+          <li><a href="#">動画</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-	<footer>
+    <!-- メインコンテンツ -->
+    <main class="content">
+	<section>
+	  <h1>動画</h1>
+	  <iframe width="250" height="145" src="https://www.youtube.com/embed/nzjXWAABTpQ" title="【MHF】サービス終了までの軌跡（サービス開始～S10）" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+
+<section>
+  <h2>ようこそ！</h2>
+  <p>このサイトではBurasutの最新情報をお届けします。</p>
+
+
+</section>
+  <!-- Burasutのコメント -->
+  <div class="comment-box burasut">
+    <img src="image/Burasut.png" alt="Burasut" class="comment-avatar">
+    <div class="comment-bubble">
+      <p>え、なにこれ？</p>
+    </div>
+  </div>
+
+  <!-- zakiのコメント -->
+  <div class="comment-box zaki">
+    <img src="image/zaki.png" alt="zaki" class="comment-avatar">
+    <div class="comment-bubble">
+      <p>しらんぽす</p>
+    </div>
+  </div>
+
+      
+    </main>
+  </div>
+
+<footer>
 	  <p>&copy; 2025 Burasutのホームページ</p>
 	  <!-- ソーシャルアイコンリンク -->
 	  <div class="social-icons">
@@ -38,6 +73,6 @@
 	    </a>
 	  </div>
 	</footer>
-
 </body>
+
 </html>
